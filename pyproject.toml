@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FluxScript"
+version = "0.1.0"
+description = "FluxScript Python-first multi-target application generator and developer CLI"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Md Safarujjaman"}]
+keywords = ["fluxscript", "compiler", "code-generation", "python", "web", "android", "ios"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Code Generators",
+  "Topic :: Software Development :: Compilers",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0", "build>=1.2", "twine>=5.0"]
+
+[project.scripts]
+fluxscript = "fluxscript.cli:main"
+flux = "fluxscript.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["fluxscript*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
